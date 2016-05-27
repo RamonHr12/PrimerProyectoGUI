@@ -66,6 +66,8 @@ public static void IngresarDatos(int opcion){
         jLabel3 = new javax.swing.JLabel();
         botonSumar = new javax.swing.JButton();
         botonRestar = new javax.swing.JButton();
+        botonMultiplicar = new javax.swing.JButton();
+        botonDividir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,6 +93,10 @@ public static void IngresarDatos(int opcion){
             }
         });
 
+        botonMultiplicar.setText("Multiplicar");
+
+        botonDividir.setText("Dividir");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,10 +117,16 @@ public static void IngresarDatos(int opcion){
                             .addComponent(campoResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                             .addComponent(campoNumero2))))
                 .addGap(18, 18, 18)
-                .addComponent(botonSumar)
-                .addGap(18, 18, 18)
-                .addComponent(botonRestar)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botonSumar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonRestar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botonMultiplicar)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonDividir)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,8 +140,10 @@ public static void IngresarDatos(int opcion){
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(jLabel2)
+                    .addComponent(botonDividir)
+                    .addComponent(botonMultiplicar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -191,6 +205,8 @@ public static void IngresarDatos(int opcion){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonDividir;
+    private javax.swing.JButton botonMultiplicar;
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
     public static javax.swing.JTextField campoNumero1;
